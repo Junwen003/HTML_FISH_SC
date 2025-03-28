@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function createNotificationBanner() {
+    const rotationInterval = 10000; // Reasonable delay for announcements change
     // Array of announcement messages
     const announcements = [
         "🎥 Live Stream Today at 14:00 MYT!",
