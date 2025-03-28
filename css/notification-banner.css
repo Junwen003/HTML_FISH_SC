@@ -1,0 +1,108 @@
+/* Top Notification Banner Styles */
+.notification-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--primary-dark);
+    color: white;
+    padding: 10px 0;
+    z-index: 1001;
+    /* Higher than other elements but below header */
+    overflow: hidden;
+    white-space: nowrap;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.notification-banner.show {
+    top: 80px;
+    /* Position below header instead of using margin */
+    display: block;
+}
+
+.notification-content {
+    width: 100%;
+    text-align: center;
+}
+
+.notification-message {
+    font-size: 1.4rem;
+    padding: 0 20px;
+    font-weight: 500;
+}
+
+.sliding-text {
+    display: inline-block;
+    padding-left: 100%;
+    animation: slide 30s linear infinite;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+
+    /* Add pause at beginning */
+    5% {
+        transform: translateX(0);
+    }
+
+    /* Slow down the middle part */
+    45% {
+        transform: translateX(-25%);
+    }
+
+    /* Add pause in the middle */
+    50% {
+        transform: translateX(-25%);
+    }
+
+    /* Continue sliding */
+    95% {
+        transform: translateX(-50%);
+    }
+
+    /* Add pause at end */
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Add highlight for important announcements */
+.sliding-text em {
+    font-style: normal;
+    color: #ffdd00;
+    font-weight: 600;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .notification-banner {
+        padding: 8px 0;
+    }
+
+    .notification-banner.show {
+        top: 70px;
+        /* Adjust for smaller header on tablets */
+    }
+
+    .notification-message {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .notification-banner {
+        padding: 6px 0;
+    }
+
+    .notification-banner.show {
+        top: 60px;
+        /* Adjust for smaller header on mobile */
+    }
+
+    .notification-message {
+        font-size: 1.2rem;
+        padding: 0 10px;
+    }
+}

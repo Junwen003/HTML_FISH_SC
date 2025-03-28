@@ -1,0 +1,190 @@
+.marketplace-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+    gap: 3rem;
+    margin-top: 5rem;
+}
+
+.marketplace-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    text-align: center;
+    padding: 3rem 2rem;
+    position: relative;
+}
+
+.marketplace-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.marketplace-logo {
+    width: 15rem;
+    height: 15rem;
+    margin: 0 auto 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.marketplace-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.marketplace-name {
+    font-size: 2.4rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--primary-dark);
+}
+
+.marketplace-description {
+    font-size: 1.6rem;
+    color: var(--text-light);
+    margin-bottom: 2.5rem;
+}
+
+.btn-marketplace {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem 2.5rem;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    font-size: 1.6rem;
+    transition: var(--transition);
+}
+
+.btn-lazada {
+    background-color: #F5A623;
+    color: white;
+}
+
+.btn-lazada:hover {
+    background-color: #e09010;
+    transform: translateY(-3px);
+}
+
+.btn-shopee {
+    background-color: #EE4D2D;
+    color: white;
+}
+
+.btn-shopee:hover {
+    background-color: #d43b1d;
+    transform: translateY(-3px);
+}
+
+.btn-facebook {
+    background-color: #1877F2;
+    color: white;
+}
+
+.btn-facebook:hover {
+    background-color: #0e66d0;
+    transform: translateY(-3px);
+}
+
+.btn-whatsapp {
+    background-color: #25D366;
+    color: white;
+}
+
+.btn-whatsapp:hover {
+    background-color: #20ba5a;
+    transform: translateY(-3px);
+}
+
+.btn-tiktok {
+    background-color: #000000;
+    color: white;
+}
+
+.btn-tiktok:hover {
+    background-color: #000000;
+    transform: translateY(-3px);
+}
+
+.live-badge {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background-color: #FF0000;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 2rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    animation: pulse 1.5s infinite;
+}
+
+.live-badge i {
+    font-size: 1rem;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.shop-benefits {
+    background-color: var(--background-light);
+    padding: 8rem 0;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 3rem;
+    margin-top: 4rem;
+}
+
+.benefit-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: 3rem 2rem;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.benefit-icon {
+    font-size: 4rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.benefit-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--primary-dark);
+    margin-bottom: 1.5rem;
+}
+
+.benefit-description {
+    font-size: 1.6rem;
+    color: var(--text-light);
+    line-height: 1.6;
+}

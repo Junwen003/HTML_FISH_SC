@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - OceanFresh Malaysian Seafood</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/products.css">
+    <link rel="stylesheet" href="css/whatsapp-float.css">
+    <link rel="stylesheet" href="css/product-preview.css">
+    <link rel="stylesheet" href="css/product-sections.css">
+    <link rel="stylesheet" href="css/page-hero.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Include Header -->
+    <div id="header-placeholder"></div>
+
+    <main>
+        <!-- Products Hero -->
+        <section class="page-hero">
+            <div class="container">
+                <h1 class="page-title">Our Premium Seafood</h1>
+                <p class="page-subtitle">Discover the finest selection of fresh seafood from Malaysian waters</p>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section class="products-section">
+            <div class="container">
+                <div class="products-layout">
+                    <!-- Filters Sidebar -->
+                    <div class="filters-sidebar">
+                        <div class="filter-group">
+                            <h3 class="filter-title">Categories</h3>
+                            <ul class="filter-list">
+                                <li class="filter-item">
+                                    <label class="filter-label">
+                                        <input type="checkbox" class="filter-checkbox" checked>
+                                        <span>All Products</span>
+                                        <span class="filter-count">24</span>
+                                    </label>
+                                </li>
+                                <li class="filter-item">
+                                    <label class="filter-label">
+                                        <input type="checkbox" class="filter-checkbox">
+                                        <span>Fish</span>
+                                        <span class="filter-count">8</span>
+                                    </label>
+                                </li>
+                                <li class="filter-item">
+                                    <label class="filter-label">
+                                        <input type="checkbox" class="filter-checkbox">
+                                        <span>Prawns & Shrimp</span>
+                                        <span class="filter-count">6</span>
+                                    </label>
+                                </li>
+                                <li class="filter-item">
+                                    <label class="filter-label">
+                                        <input type="checkbox" class="filter-checkbox">
+                                        <span>Crabs & Lobsters</span>
+                                        <span class="filter-count">4</span>
+                                    </label>
+                                </li>
+                                <li class="filter-item">
+                                    <label class="filter-label">
+                                        <input type="checkbox" class="filter-checkbox">
+                                        <span>Shellfish</span>
+                                        <span class="filter-count">3</span>
+                                    </label>
+                                </li>
+                                <li class="filter-item">
+                                    <label class="filter-label">
+                                        <input type="checkbox" class="filter-checkbox">
+                                        <span>Specialty Items</span>
+                                        <span class="filter-count">3</span>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="filter-group">
+                            <h3 class="filter-title">Price Range</h3>
+                            <div class="price-range-slider">
+                                <div class="price-inputs">
+                                    <div class="price-input">
+                                        <label>Min</label>
+                                        <input type="number" value="0" min="0" max="200">
+                                    </div>
+                                    <div class="price-input">
+                                        <label>Max</label>
+                                        <input type="number" value="200" min="0" max="200">
+                                    </div>
+                                </div>
+                                <div class="range-slider">
+                                    <input type="range" min="0" max="200" value="0" class="range-min">
+                                    <input type="range" min="0" max="200" value="200" class="range-max">
+                                    <div class="slider-track"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="filter-group">
+                            <h3 class="filter-title">Source</h3>
+                            <ul class="filter-list">
+                                <li class="filter-item">
+                                    <label class="filter-label">
+                                        <input type="checkbox" class="filter-checkbox">
+                                        <span>Wild Caught</span>
+                                        <span class="filter-count">14</span>
+                                    </label>
+                                </li>
+                                <li class="filter-item">
+                                    <label class="filter-label">
+                                        <input type="checkbox" class="filter-checkbox">
+                                        <span>Sustainably Farmed</span>
+                                        <span class="filter-count">10</span>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="filter-group">
+                            <h3 class="filter-title">Availability</h3>
+                            <ul class="filter-list">
+                                <li class="filter-item">
+                                    <label class="filter-label">
+                                        <input type="checkbox" class="filter-checkbox">
+                                        <span>In Stock</span>
+                                        <span class="filter-count">20</span>
+                                    </label>
+                                </li>
+                                <li class="filter-item">
+                                    <label class="filter-label">
+                                        <input type="checkbox" class="filter-checkbox">
+                                        <span>Pre-order</span>
+                                        <span class="filter-count">4</span>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <button class="btn btn-outline filter-reset-btn">Reset Filters</button>
+                    </div>
+
+                    <!-- Products Content -->
+                    <div class="products-content">
+                        <div class="products-header">
+                            <div class="products-count">Showing <span>24</span> products</div>
+                            <div class="products-sort">
+                                <label for="sort-select">Sort by:</label>
+                                <select id="sort-select" class="sort-select">
+                                    <option value="featured">Featured</option>
+                                    <option value="price-low">Price: Low to High</option>
+                                    <option value="price-high">Price: High to Low</option>
+                                    <option value="name-asc">Name: A to Z</option>
+                                    <option value="name-desc">Name: Z to A</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="product-grid">
+                            <!-- Product 1 -->
+                            <div class="product-card">
+                                <div class="product-badge">Best Seller</div>
+                                <div class="product-image">
+                                    <img class="main-image"
+                                        src="https://images.pexels.com/photos/3680164/pexels-photo-3680164.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                        alt=" Tiger Prawns">
+                                    <img class="hover-image"
+                                        src="https://cdn.pixabay.com/photo/2019/07/07/10/34/prawn-4322209_1280.jpg"
+                                        alt=" Tiger Prawns - Prepared">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-title">Tiger Prawns</h3>
+                                    <p class="product-description">Premium wild-caught tiger prawns from the South China
+                                        Sea.</p>
+                                    <div class="product-footer">
+                                        <span class="product-price">RM 45.00/kg</span>
+                                        <button class="btn-add-cart"><i class="fas fa-plus"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Product 2 -->
+                            <div class="product-card">
+                                <div class="product-badge">Fresh Catch</div>
+                                <div class="product-image">
+                                    <img class="main-image"
+                                        src="https://media.istockphoto.com/id/514675891/photo/fresh-red-snappers.webp?a=1&b=1&s=612x612&w=0&k=20&c=It-FYvnOcP-RvURD9NWD18VRJ55l20UPuiCs2ft5bA0="
+                                        alt=" Red Snapper">
+                                    <img class="hover-image"
+                                        src="https://media.istockphoto.com/id/638834804/photo/fresh-fish-red-snapper-for-sale-in-seafood-store.webp?a=1&b=1&s=612x612&w=0&k=20&c=NFDSbqWxc6uJZMXpLnn73mXfcmomjSQtot5vtxv6gig="
+                                        alt="Red Snapper - Prepared">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-title">Red Snapper</h3>
+                                    <p class="product-description">Fresh whole red snapper, perfect for grilling or
+                                        steaming.</p>
+                                    <div class="product-footer">
+                                        <span class="product-price">RM 38.00/kg</span>
+                                        <button class="btn-add-cart"><i class="fas fa-plus"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Product 3 -->
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img class="main-image"
+                                        src="https://plus.unsplash.com/premium_photo-1719611418391-1c119e26845b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Ymx1ZSUyMGNyYWJ8ZW58MHx8MHx8fDA%3D"
+                                        alt="Blue Crab">
+                                    <img class="hover-image"
+                                        src="https://images.pexels.com/photos/15665165/pexels-photo-15665165/free-photo-of-crabs-with-claws.jpeg?auto=compress&cs=tinysrgb&w=600"
+                                        alt="Blue Crab - Prepared">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-title">Blue Crab</h3>
+                                    <p class="product-description">Sweet and tender blue crabs from Malaysian mangroves.
+                                    </p>
+                                    <div class="product-footer">
+                                        <span class="product-price">RM 32.00/kg</span>
+                                        <button class="btn-add-cart"><i class="fas fa-plus"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Product 4 -->
+                            <div class="product-card">
+                                <div class="product-badge">Premium</div>
+                                <div class="product-image">
+                                    <img src="https://media.istockphoto.com/id/1176250147/photo/raw-salmon-piece-isolated-on-white-background.webp?a=1&b=1&s=612x612&w=0&k=20&c=IAogfu9CX9Za-sZN6SMrrrQPmqfIHn0pm0s1y5fLa4k="
+                                        alt="Salmon Fillet">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-title">Salmon Fillet</h3>
+                                    <p class="product-description">Premium Atlantic salmon fillets, rich in omega-3.</p>
+                                    <div class="product-footer">
+                                        <span class="product-price">RM 58.00/kg</span>
+                                        <button class="btn-add-cart"><i class="fas fa-plus"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Product 5 -->
+                            <!-- <div class="product-card">
+                                <div class="product-image">
+                                    <img src="https://images.unsplash.com/photo-1544943910-4c1dc44aa184?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
+                                        alt="Sea Bass">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-title">Sea Bass</h3>
+                                    <p class="product-description">Sustainably farmed sea bass with delicate flavor.</p>
+                                    <div class="product-footer">
+                                        <span class="product-price">RM 42.00/kg</span>
+                                        <button class="btn-add-cart"><i class="fas fa-plus"></i></button>
+                                    </div>
+                                </div>
+                            </div> -->
+
+                            <!-- Product 6 -->
+                            <!-- <div class="product-card">
+                                <div class="product-badge">Limited</div>
+                                <div class="product-image">
+                                    <img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
+                                        alt="King Crab">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-title">King Crab</h3>
+                                    <p class="product-description">Luxurious king crab with sweet, tender meat.</p>
+                                    <div class="product-footer">
+                                        <span class="product-price">RM 120.00/kg</span>
+                                        <button class="btn-add-cart"><i class="fas fa-plus"></i></button>
+                                    </div>
+                                </div>
+                            </div> -->
+
+                            <!-- Product 7 -->
+                            <!-- <div class="product-card">
+                                <div class="product-image">
+                                    <img src="https://images.unsplash.com/photo-1579164681045-13c9d5e8e3e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
+                                        alt="Squid">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-title">Fresh Squid</h3>
+                                    <p class="product-description">Tender, cleaned squid ready for your favorite
+                                        recipes.</p>
+                                    <div class="product-footer">
+                                        <span class="product-price">RM 28.00/kg</span>
+                                        <button class="btn-add-cart"><i class="fas fa-plus"></i></button>
+                                    </div>
+                                </div>
+                            </div> -->
+
+                            <!-- Product 8 -->
+                            <!-- <div class="product-card">
+                                <div class="product-badge">Organic</div>
+                                <div class="product-image">
+                                    <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
+                                        alt="Mussels">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-title">Fresh Mussels</h3>
+                                    <p class="product-description">Sustainably farmed mussels, cleaned and ready to
+                                        cook.</p>
+                                    <div class="product-footer">
+                                        <span class="product-price">RM 22.00/kg</span>
+                                        <button class="btn-add-cart"><i class="fas fa-plus"></i></button>
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+
+                        <div class="pagination">
+                            <a href="#" class="pagination-arrow disabled"><i class="fas fa-chevron-left"></i></a>
+                            <a href="#" class="pagination-number active">1</a>
+                            <a href="#" class="pagination-number">2</a>
+                            <a href="#" class="pagination-number">3</a>
+                            <a href="#" class="pagination-arrow"><i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Customer Favorites -->
+        <section class="customer-favorites">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Customer Favorites</h2>
+                    <p class="section-subtitle">Our most popular products loved by customers</p>
+                </div>
+                <div class="product-grid">
+                    <!-- Favorite Product 1 -->
+                    <div class="product-card">
+                        <div class="product-badge">Top Rated</div>
+                        <div class="product-image">
+                            <img src="https://img.freepik.com/free-photo/fresh-squid_1339-6217.jpg?semt=ais_hybrid"
+                                alt="Fresh Squid">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Fresh Squid</h3>
+                            <p class="product-description">Tender, cleaned squid ready for your favorite recipes.</p>
+                            <div class="product-footer">
+                                <span class="product-price">RM 28.00/kg</span>
+                                <button class="btn-add-cart"><i class="fas fa-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Favorite Product 2 -->
+                    <div class="product-card">
+                        <div class="product-badge">Customer Choice</div>
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
+                                alt="Fresh Mussels">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Fresh Mussels</h3>
+                            <p class="product-description">Sustainably farmed mussels, cleaned and ready to cook.</p>
+                            <div class="product-footer">
+                                <span class="product-price">RM 22.00/kg</span>
+                                <button class="btn-add-cart"><i class="fas fa-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Favorite Product 3 -->
+                    <div class="product-card">
+                        <div class="product-badge">Most Popular</div>
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1615141982883-c7ad0e69fd62?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
+                                alt="Tiger Prawns">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Tiger Prawns</h3>
+                            <p class="product-description">Premium wild-caught tiger prawns from the South China Sea.
+                            </p>
+                            <div class="product-footer">
+                                <span class="product-price">RM 45.00/kg</span>
+                                <button class="btn-add-cart"><i class="fas fa-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="view-all-container">
+                    <a href="product_View.html" class="btn btn-secondary">View Product Details</a>
+                </div> -->
+            </div>
+        </section>
+
+        <!-- Special Offers -->
+        <section class="special-offers">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Special Offers</h2>
+                    <p class="section-subtitle">Limited time deals you don't want to miss</p>
+                </div>
+                <div class="offers-grid">
+                    <div class="offer-card">
+                        <div class="offer-content">
+                            <h3 class="offer-title">Buy 2 Get 1 Free</h3>
+                            <p class="offer-description">On selected shellfish products</p>
+                            <a href="#" class="btn btn-outline">View Offer</a>
+                        </div>
+                        <div class="offer-image">
+                            <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
+                                alt="Shellfish Offer">
+                        </div>
+                    </div>
+                    <div class="offer-card">
+                        <div class="offer-content">
+                            <h3 class="offer-title">20% Off Premium Fish</h3>
+                            <p class="offer-description">Use code: PREMIUM20 at checkout</p>
+                            <a href="#" class="btn btn-outline">Shop Now</a>
+                        </div>
+                        <div class="offer-image">
+                            <img src="https://images.unsplash.com/photo-1534177616072-ef7dc120449d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                alt="Premium Fish Offer">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="newsletter">
+            <div class="container">
+                <div class="newsletter-wrapper">
+                    <div class="newsletter-content">
+                        <h2>Stay Updated with OceanFresh</h2>
+                        <p>Subscribe to our newsletter for exclusive offers, recipes, and seafood tips.</p>
+                    </div>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Include Footer -->
+    <div id="footer-placeholder"></div>
+    <script src="js/loader.js"></script>
+
+    <script src="js/main.js"></script>
+    <script src="js/include-html.js"></script>
+    <script src="js/notification-banner.js"></script>
+    <script src="js/product-preview.js"></script>
+</body>
+
+</html>

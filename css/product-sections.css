@@ -1,0 +1,136 @@
+/* Customer Favorites Section Styles */
+.customer-favorites {
+    background-color: var(--background-light);
+    padding: 8rem 0;
+}
+
+.customer-favorites .section-header {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.customer-favorites .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+    gap: 3rem;
+    margin-top: 4rem;
+}
+
+.customer-favorites .product-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    position: relative;
+}
+
+.customer-favorites .product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.customer-favorites .product-badge {
+    position: absolute;
+    top: 1.5rem;
+    left: 0;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    z-index: 10;
+}
+
+.view-all-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+}
+
+/* Special Offers Section Styles */
+.special-offers {
+    background-color: white;
+    padding: 8rem 0;
+}
+
+.special-offers .section-header {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.offers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+    gap: 3rem;
+    margin-top: 4rem;
+}
+
+.offer-card {
+    display: flex;
+    background-color: var(--background-light);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    height: 23rem;
+}
+
+.offer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.offer-content {
+    flex: 1;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.offer-title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--primary-dark);
+}
+
+.offer-description {
+    font-size: 1.6rem;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+}
+
+.offer-image {
+    flex: 1;
+    overflow: hidden;
+}
+
+.offer-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.offer-card:hover .offer-image img {
+    transform: scale(1.1);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .offers-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .offer-card {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .offer-image {
+        height: 20rem;
+    }
+}

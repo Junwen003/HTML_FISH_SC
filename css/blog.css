@@ -1,0 +1,461 @@
+/* Blog Page Styles */
+
+/* Blog Layout */
+.blog-section {
+    padding: 6rem 0;
+    background-color: var(--background-light);
+}
+
+.blog-layout {
+    display: grid;
+    grid-template-columns: 1fr 35rem;
+    gap: 4rem;
+}
+
+/* Featured Article */
+.blog-featured {
+    background-color: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    margin-bottom: 4rem;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.featured-image {
+    position: relative;
+    height: 40rem;
+    overflow: hidden;
+}
+
+.featured-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.blog-featured:hover .featured-image img {
+    transform: scale(1.05);
+}
+
+.featured-tag {
+    position: absolute;
+    top: 2rem;
+    left: 0;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.8rem 2rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    border-radius: 0 4px 4px 0;
+    z-index: 2;
+}
+
+.featured-content {
+    padding: 3rem;
+}
+
+.post-meta {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.post-category {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+.post-date {
+    color: var(--text-light);
+    font-size: 1.4rem;
+}
+
+.post-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+    line-height: 1.3;
+    transition: var(--transition);
+}
+
+.post-title:hover {
+    color: var(--primary-color);
+}
+
+.post-excerpt {
+    font-size: 1.6rem;
+    color: var(--text-light);
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+}
+
+/* Blog Grid */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+}
+
+.blog-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.blog-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.blog-image {
+    height: 22rem;
+    overflow: hidden;
+}
+
+.blog-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.blog-card:hover .blog-image img {
+    transform: scale(1.05);
+}
+
+.blog-content {
+    padding: 2.5rem;
+}
+
+.blog-card .post-title {
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+}
+
+.read-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-top: 1.5rem;
+    transition: var(--transition);
+}
+
+.read-more i {
+    font-size: 1.2rem;
+    transition: var(--transition);
+}
+
+.read-more:hover {
+    color: var(--primary-dark);
+}
+
+.read-more:hover i {
+    transform: translateX(5px);
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 5rem;
+}
+
+.pagination-number,
+.pagination-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    font-size: 1.6rem;
+    transition: var(--transition);
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.pagination-number:hover,
+.pagination-arrow:hover {
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.pagination-number.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Blog Sidebar */
+.blog-sidebar {
+    position: sticky;
+    top: 10rem;
+    align-self: start;
+}
+
+.sidebar-widget {
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: 2.5rem;
+    box-shadow: var(--box-shadow);
+    margin-bottom: 3rem;
+}
+
+.widget-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: var(--primary-dark);
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.widget-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 5rem;
+    height: 2px;
+    background-color: var(--secondary-color);
+}
+
+/* Search Widget */
+.search-form {
+    display: flex;
+    position: relative;
+}
+
+.search-form input {
+    width: 100%;
+    padding: 1.2rem 1.5rem;
+    border: 1px solid var(--background-dark);
+    border-radius: var(--border-radius);
+    font-size: 1.5rem;
+    transition: var(--transition);
+}
+
+.search-form input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.search-form button {
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.search-form button:hover {
+    color: var(--primary-color);
+}
+
+/* Categories Widget */
+.category-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.category-list li a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    transition: var(--transition);
+}
+
+.category-list li a:hover {
+    color: var(--primary-color);
+    transform: translateX(5px);
+}
+
+.category-list li a span {
+    color: var(--text-light);
+    font-size: 1.3rem;
+}
+
+/* Recent Posts Widget */
+.recent-posts {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.recent-post {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.post-thumb {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 5px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.post-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.recent-post:hover .post-thumb img {
+    transform: scale(1.05);
+}
+
+.post-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.post-info h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    line-height: 1.4;
+}
+
+.post-info h4 a {
+    color: var(--text-color);
+    transition: var(--transition);
+}
+
+.post-info h4 a:hover {
+    color: var(--primary-color);
+}
+
+.post-info .post-date {
+    font-size: 1.3rem;
+}
+
+/* Tags Widget */
+.tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.tag {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--background-light);
+    border-radius: 3rem;
+    font-size: 1.3rem;
+    color: var(--text-light);
+    transition: var(--transition);
+}
+
+.tag:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Newsletter Widget */
+.newsletter-widget p {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    color: var(--text-light);
+}
+
+.newsletter-form input {
+    width: 100%;
+    padding: 1.2rem 1.5rem;
+    border: 1px solid var(--background-dark);
+    border-radius: var(--border-radius);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: var(--transition);
+}
+
+.newsletter-form input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.newsletter-form button {
+    width: 100%;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .blog-layout {
+        grid-template-columns: 1fr 30rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .blog-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .blog-sidebar {
+        position: static;
+        margin-top: 5rem;
+    }
+
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-image {
+        height: 30rem;
+    }
+
+    .post-title {
+        font-size: 2.4rem;
+    }
+
+    .blog-card .post-title {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .featured-content,
+    .blog-content {
+        padding: 2rem;
+    }
+
+    .post-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .featured-image {
+        height: 25rem;
+    }
+}
