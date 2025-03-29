@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('header-loaded', function () {
     // Add WhatsApp float button to all pages if it doesn't exist
     if (!document.querySelector('.whatsapp-float')) {
         const whatsappHTML = `
@@ -8,53 +8,51 @@ document.addEventListener('DOMContentLoaded', function () {
         `;
         document.body.insertAdjacentHTML('beforeend', whatsappHTML);
     }
-    // Enhanced Mobile Menu Toggle
+
+    const toggle = document.querySelector('.mobile-menu-toggle');
+    const menu = document.querySelector('.nav-menu');
+
+
+    if (!toggle) {
+        console.warn('❌ .mobile-menu-toggle not found');
+    }
+
+    if (!menu) {
+        console.warn('❌ .nav-menu not found');
+    }
+
+    if (toggle && menu) {
+        console.log('✅ Mobile menu elements found');
+    }
+
+
+
+    // Mobile Menu Toggle
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
 
     if (mobileMenuToggle && navMenu) {
-        // Initialize menu state
-        mobileMenuToggle.classList.remove('active');
-        navMenu.classList.remove('active');
-
-        // Toggle menu on click with animation
-        mobileMenuToggle.addEventListener('click', (event) => {
-            event.preventDefault();
+        mobileMenuToggle.addEventListener('click', function (event) {
             event.stopPropagation();
-
-            const isActive = mobileMenuToggle.classList.contains('active');
-
-            if (!isActive) {
-                // Open menu
-                mobileMenuToggle.classList.add('active');
-                navMenu.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            } else {
-                // Close menu
-                mobileMenuToggle.classList.remove('active');
-                navMenu.classList.remove('active');
-                document.body.style.overflow = '';
-            }
+            mobileMenuToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
         });
 
-        // Close menu when clicking outside
         document.addEventListener('click', (e) => {
             if (!mobileMenuToggle.contains(e.target) && !navMenu.contains(e.target)) {
                 mobileMenuToggle.classList.remove('active');
                 navMenu.classList.remove('active');
-                document.body.style.overflow = '';
             }
         });
 
-        // Close menu when clicking on nav links
         const navLinks = navMenu.querySelectorAll('.nav-link');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenuToggle.classList.remove('active');
                 navMenu.classList.remove('active');
-                document.body.style.overflow = '';
             });
         });
+
     }
 
     // FAQ Toggle Functionality

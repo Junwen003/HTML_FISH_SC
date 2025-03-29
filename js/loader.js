@@ -6,6 +6,9 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(data => {
             const headerPlaceholder = document.getElementById('header-placeholder');
             if (headerPlaceholder) headerPlaceholder.innerHTML = data;
+
+            // 👇 Trigger a custom event after header is inserted
+            document.dispatchEvent(new Event('header-loaded'));
         });
 
     // Load footer
