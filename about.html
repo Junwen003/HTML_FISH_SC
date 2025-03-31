@@ -5,11 +5,107 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - OceanFresh Malaysian Seafood</title>
+
+    <!-- Critical CSS inlined for immediate rendering -->
+    <style>
+        /* Critical CSS for immediate rendering */
+        :root {
+            --primary-color: #0077b6;
+            --secondary-color: #ff9e00;
+        }
+
+        /* Preloaded header styles */
+        .initial-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 0;
+            position: relative;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .initial-header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .initial-logo {
+            font-size: 2.2rem;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .initial-logo span {
+            color: var(--secondary-color);
+        }
+
+        .initial-menu-btn {
+            width: 3rem;
+            height: 2.5rem;
+            background: none;
+            border: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+
+        .initial-menu-btn span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background-color: white;
+            border-radius: 3px;
+        }
+
+        /* Critical WhatsApp button styles */
+        .whatsapp-float {
+            position: fixed;
+            width: 6rem;
+            height: 6rem;
+            bottom: 3rem;
+            right: 3rem;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 3rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                width: 5rem;
+                height: 5rem;
+                font-size: 2.5rem;
+                right: 2rem;
+                bottom: 2rem;
+            }
+        }
+    </style>
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+        as="style">
+
+    <!-- Regular stylesheets -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/about.css">
     <link rel="stylesheet" href="css/whatsapp-float.css">
     <link rel="stylesheet" href="css/page-hero.css">
+    <link rel="stylesheet" href="css/initial-header.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -17,16 +113,45 @@
         rel="stylesheet">
 </head>
 
-<body>
-    <!-- Include Header -->
+<body class="header-loading">
+    <!-- Initial visible header that shows immediately -->
+    <header class="initial-header" id="initial-header">
+        <div class="initial-header-content">
+            <div class="initial-logo">Ocean<span>Fresh</span></div>
+            <button class="initial-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
 
+    <!-- Include Header (this will be loaded via JS) -->
     <div id="header-placeholder"></div>
+
+    <!-- WhatsApp float button (added here for immediate display) -->
+    <a href="https://wa.me/60123456789" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <main>
         <!-- About Hero -->
-        <section class="page-hero">
+        <section class="page-hero"
+            style="background-image: url('https://images.unsplash.com/photo-1534766555764-ce878a5e3a2b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'); background-attachment: fixed;">
+            <div class="hero-overlay"></div>
+            <div class="bubbles">
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+            </div>
             <div class="container">
-                <h1 class="page-title">Our Story</h1>
-                <p class="page-subtitle">Discover the passion and commitment behind OceanFresh</p>
+                <h1 class="page-title animate__animated animate__fadeInDown">Our Story</h1>
+                <p class="page-subtitle animate__animated animate__fadeInUp animate__delay-1s">Discover the passion and
+                    commitment behind OceanFresh</p>
             </div>
         </section>
 
@@ -194,25 +319,37 @@
                     <h2 class="section-title">Where We Source Our Seafood</h2>
                     <p class="section-subtitle">Discover the pristine waters that provide our premium seafood</p>
                 </div>
-                <div class="map-container">
-                    <div class="map-image">
+                <div class="sourcing-grid">
+                    <div class="sourcing-image">
                         <img src="https://media.istockphoto.com/id/1399500192/photo/malaysian-fishermen-load-caught-fish-from-a-ship-into-plastic-containers-on-street-market-in.jpg?s=612x612&w=0&k=20&c=m7wqcf1Yk9CT1Yzng0UepESaTsmXQ3_HWqr1IjgFc_Y="
-                            alt=" Malaysia Seafood Map">
+                            alt="Malaysia Seafood Map">
                     </div>
                     <div class="sourcing-regions">
-                        <div class="region-item">
+                        <div class="region-card">
+                            <div class="region-icon">
+                                <i class="fas fa-water"></i>
+                            </div>
                             <h3 class="region-name">South China Sea</h3>
                             <p class="region-products">Tiger Prawns, Red Snapper, Grouper</p>
                         </div>
-                        <div class="region-item">
+                        <div class="region-card">
+                            <div class="region-icon">
+                                <i class="fas fa-ship"></i>
+                            </div>
                             <h3 class="region-name">Strait of Malacca</h3>
                             <p class="region-products">Blue Crab, Pomfret, Mackerel</p>
                         </div>
-                        <div class="region-item">
+                        <div class="region-card">
+                            <div class="region-icon">
+                                <i class="fas fa-fish"></i>
+                            </div>
                             <h3 class="region-name">Sabah Coastal Waters</h3>
                             <p class="region-products">Lobster, Coral Trout, Barramundi</p>
                         </div>
-                        <div class="region-item">
+                        <div class="region-card">
+                            <div class="region-icon">
+                                <i class="fas fa-tree"></i>
+                            </div>
                             <h3 class="region-name">Sarawak Mangroves</h3>
                             <p class="region-products">Mud Crab, Prawns, Milkfish</p>
                         </div>
@@ -302,16 +439,21 @@
                         <p>At OceanFresh, sustainability isn't just a buzzword—it's at the core of everything we do. We
                             believe that responsible fishing practices are essential for preserving our oceans and
                             ensuring a continuous supply of seafood for generations to come.</p>
-                        <ul class="sustainability-list">
-                            <li><i class="fas fa-check-circle"></i> We partner only with fisheries that follow
+                        <ul class="sustainability-list visible">
+                            <li class="visible"><i class="fas fa-check-circle"></i> We partner only with fisheries that
+                                follow
                                 sustainable practices</li>
-                            <li><i class="fas fa-check-circle"></i> We maintain MSC and ASC certifications for our
+                            <li class="visible"><i class="fas fa-check-circle"></i> We maintain MSC and ASC
+                                certifications for our
                                 products</li>
-                            <li><i class="fas fa-check-circle"></i> We use eco-friendly packaging to reduce plastic
+                            <li class="visible"><i class="fas fa-check-circle"></i> We use eco-friendly packaging to
+                                reduce plastic
                                 waste</li>
-                            <li><i class="fas fa-check-circle"></i> We support marine conservation initiatives across
+                            <li class="visible"><i class="fas fa-check-circle"></i> We support marine conservation
+                                initiatives across
                                 Malaysia</li>
-                            <li><i class="fas fa-check-circle"></i> We educate consumers about sustainable seafood
+                            <li class="visible"><i class="fas fa-check-circle"></i> We educate consumers about
+                                sustainable seafood
                                 choices</li>
                         </ul>
                         <a href="#" class="btn btn-primary">Learn More About Our Practices</a>
@@ -371,6 +513,19 @@
                             </div>
                         </div>
                     </div>
+                    <div class="testimonial-arrows">
+                        <div class="testimonial-arrow prev-testimonial">
+                            <i class="fas fa-chevron-left"></i>
+                        </div>
+                        <div class="testimonial-arrow next-testimonial">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-nav">
+                    <div class="testimonial-dot active" data-index="0"></div>
+                    <div class="testimonial-dot" data-index="1"></div>
+                    <div class="testimonial-dot" data-index="2"></div>
                 </div>
             </div>
         </section>
@@ -379,7 +534,8 @@
         <section class="cta-section">
             <div class="container">
                 <div class="cta-wrapper">
-                    <h2 class="cta-title">Ready to Experience the OceanFresh Difference?</h2>
+                    <h2 class="cta-title animate__animated animate__pulse animate__infinite animate__slow">Ready to
+                        Experience the OceanFresh Difference?</h2>
                     <p class="cta-text">Join thousands of satisfied customers who trust us for the finest Malaysian
                         seafood.</p>
                     <div class="cta-buttons">
@@ -396,8 +552,8 @@
 
     <div id="footer-placeholder"></div>
     <script src="js/loader.js"></script>
-
     <script src="js/main.js"></script>
+    <script src="js/animation.js"></script>
 
 </body>
 

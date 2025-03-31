@@ -13,17 +13,17 @@ document.addEventListener('header-loaded', function () {
     const menu = document.querySelector('.nav-menu');
 
 
-    if (!toggle) {
-        console.warn('❌ .mobile-menu-toggle not found');
-    }
+    // if (!toggle) {
+    //     console.warn('❌ .mobile-menu-toggle not found');
+    // }
 
-    if (!menu) {
-        console.warn('❌ .nav-menu not found');
-    }
+    // if (!menu) {
+    //     console.warn('❌ .nav-menu not found');
+    // }
 
-    if (toggle && menu) {
-        console.log('✅ Mobile menu elements found');
-    }
+    // if (toggle && menu) {
+    //     console.log('✅ Mobile menu elements found');
+    // }
 
 
 

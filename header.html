@@ -2,6 +2,29 @@
     <!-- Add notification banner CSS to all pages through header -->
     <link rel="stylesheet" href="css/notification-banner.css">
 
+    <!-- Script for smooth header transition -->
+    <script>
+        // Smooth transition between initial and full header
+        document.addEventListener('DOMContentLoaded', function () {
+            const initialHeader = document.getElementById('initial-header');
+            if (initialHeader) {
+                // Fade out initial header instead of hiding immediately
+                initialHeader.style.opacity = '0';
+                setTimeout(() => {
+                    initialHeader.style.display = 'none';
+                }, 300);
+            }
+            // Add loaded class to body
+            document.body.classList.add('loaded');
+            document.body.classList.remove('header-loading');
+
+            // Ensure WhatsApp button always displays correctly
+            const whatsappElement = document.querySelector('.whatsapp-float');
+            if (whatsappElement) {
+                whatsappElement.style.display = 'flex';
+            }
+        });
+    </script>
 
     <!-- Ensure animated banner is loaded on every page -->
     <div class="container">
