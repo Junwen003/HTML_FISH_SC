@@ -499,13 +499,7 @@
     padding: 3rem;
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
-    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275),
-        box-shadow 0.6s ease,
-        background-color 0.5s ease;
-    opacity: 0;
-    transform: translateX(30px);
-    animation: none;
-    /* Reset any auto-animations */
+
 }
 
 .process-step.animate,
@@ -570,7 +564,7 @@
 }
 
 /* Step connector dots */
-.process-step::before {
+/* .process-step::before {
     content: '';
     position: absolute;
     left: -15px;
@@ -585,7 +579,7 @@
     animation: popIn 0.5s ease-out forwards;
     animation-delay: calc(var(--item-index, 0) * 0.3s + 1s);
     box-shadow: 0 0 0 5px rgba(0, 119, 182, 0.2);
-}
+} */
 
 .process-step:hover::before {
     background-color: var(--secondary-color);
