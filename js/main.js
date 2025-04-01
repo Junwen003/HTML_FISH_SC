@@ -55,50 +55,177 @@ document.addEventListener('header-loaded', function () {
 
     }
 
-    // FAQ Toggle Functionality
+    // FAQ Toggle Functionality - Optimized for performance
     const faqItems = document.querySelectorAll('.faq-item');
 
     if (faqItems.length > 0) {
-        faqItems.forEach(item => {
-            const question = item.querySelector('.faq-question');
+        // Use event delegation for better performance
+        const faqContainer = document.querySelector('.faq-container');
 
-            question.addEventListener('click', () => {
-                // Close all other items
-                faqItems.forEach(otherItem => {
-                    if (otherItem !== item && otherItem.classList.contains('active')) {
-                        otherItem.classList.remove('active');
-                        const icon = otherItem.querySelector('.faq-toggle i');
-                        if (icon.classList.contains('fa-minus')) {
-                            icon.classList.remove('fa-minus');
-                            icon.classList.add('fa-plus');
+        if (faqContainer) {
+            faqContainer.addEventListener('click', function (e) {
+                // Find the closest faq-question parent of the clicked element
+                const questionElement = e.target.closest('.faq-question');
+
+                if (!questionElement) return; // Not clicking on a question
+
+                const faqItem = questionElement.parentElement;
+                const faqAnswer = faqItem.querySelector('.faq-answer');
+                const icon = faqItem.querySelector('.faq-toggle i');
+
+                // Close others first
+                faqItems.forEach(item => {
+                    if (item !== faqItem && item.classList.contains('active')) {
+                        const itemAnswer = item.querySelector('.faq-answer');
+                        const itemIcon = item.querySelector('.faq-toggle i');
+
+                        // Remove active class
+                        item.classList.remove('active');
+
+                        // Reset icon
+                        if (itemIcon.classList.contains('fa-minus')) {
+                            itemIcon.classList.remove('fa-minus');
+                            itemIcon.classList.add('fa-plus');
                         }
+
+                        // Collapse the answer with height animation
+                        itemAnswer.style.height = '0px';
                     }
                 });
 
                 // Toggle current item
-                item.classList.toggle('active');
+                const isActive = faqItem.classList.contains('active');
 
-                // Toggle icon
-                const icon = item.querySelector('.faq-toggle i');
-                if (item.classList.contains('active')) {
-                    icon.classList.remove('fa-plus');
-                    icon.classList.add('fa-minus');
-                } else {
+                if (isActive) {
+                    // Collapse
+                    faqItem.classList.remove('active');
+                    faqAnswer.style.height = '0px';
+
+                    // Change icon
                     icon.classList.remove('fa-minus');
                     icon.classList.add('fa-plus');
+                } else {
+                    // Expand
+                    faqItem.classList.add('active');
+
+                    // Calculate the needed height and set it (for smooth animation)
+                    const answerContent = faqAnswer.querySelector('.faq-answer-content');
+                    faqAnswer.style.height = answerContent.offsetHeight + 'px';
+
+                    // Change icon
+                    icon.classList.remove('fa-plus');
+                    icon.classList.add('fa-minus');
+
+                    // Add subtle animation to the icon
+                    const faqIcon = faqItem.querySelector('.faq-icon');
+                    if (faqIcon && !faqIcon.classList.contains('pulse-animation')) {
+                        faqIcon.classList.add('pulse-animation');
+                        setTimeout(() => {
+                            faqIcon.classList.remove('pulse-animation');
+                        }, 400);
+                    }
                 }
             });
-        });
 
-        // Auto-open delivery areas FAQ if hash is present
-        if (window.location.hash === '#delivery-areas') {
-            const deliveryFaq = document.getElementById('delivery-areas-faq');
-            if (deliveryFaq && !deliveryFaq.classList.contains('active')) {
-                deliveryFaq.classList.add('active');
-                const icon = deliveryFaq.querySelector('.faq-toggle i');
-                icon.classList.remove('fa-plus');
-                icon.classList.add('fa-minus');
+            // Initialize heights to 0 for proper animation
+            faqItems.forEach(item => {
+                const answer = item.querySelector('.faq-answer');
+                if (answer) {
+                    answer.style.height = '0px';
+                }
+            });
+
+            // Auto-open FAQ if hash is present - optimized
+            if (window.location.hash === '#delivery-areas') {
+                const deliveryFaq = document.getElementById('delivery-areas-faq');
+                if (deliveryFaq) {
+                    // Wait a tiny bit for everything to render
+                    setTimeout(() => {
+                        deliveryFaq.classList.add('active');
+
+                        const answer = deliveryFaq.querySelector('.faq-answer');
+                        const answerContent = answer.querySelector('.faq-answer-content');
+                        answer.style.height = answerContent.offsetHeight + 'px';
+
+                        const icon = deliveryFaq.querySelector('.faq-toggle i');
+                        if (icon) {
+                            icon.classList.remove('fa-plus');
+                            icon.classList.add('fa-minus');
+                        }
+                    }, 100);
+                }
             }
+        }
+
+        // Optimized Area Search - using debounce for better performance
+        const areaSearch = document.getElementById('area-search');
+        if (areaSearch) {
+            let searchTimeout;
+
+            areaSearch.addEventListener('input', function () {
+                // Clear any existing timeout
+                clearTimeout(searchTimeout);
+
+                // Set a new timeout - debounce pattern
+                searchTimeout = setTimeout(() => {
+                    const searchValue = this.value.toLowerCase().trim();
+                    const areaItems = document.querySelectorAll('.area-item');
+
+                    // Hide/show message based on initial state
+                    let noResultsMsg = document.querySelector('.no-results-message');
+                    if (noResultsMsg) {
+                        noResultsMsg.style.display = 'none';
+                    }
+
+                    if (searchValue === '') {
+                        // Fast path for empty search
+                        areaItems.forEach(item => {
+                            item.innerHTML = item.textContent; // Remove any highlights
+                            item.style.display = '';
+                        });
+                        return;
+                    }
+
+                    // Create a document fragment for more efficient DOM manipulation
+                    let hasResults = false;
+
+                    areaItems.forEach(item => {
+                        const originalText = item.textContent;
+                        const areaText = originalText.toLowerCase();
+
+                        if (areaText.includes(searchValue)) {
+                            hasResults = true;
+                            item.style.display = '';
+
+                            // Only do the highlighting if necessary
+                            const regex = new RegExp(`(${searchValue})`, 'gi');
+                            const highlightedText = originalText.replace(
+                                regex,
+                                '<span class="highlight">$1</span>'
+                            );
+
+                            // Only update DOM if text changed
+                            if (item.innerHTML !== highlightedText) {
+                                item.innerHTML = highlightedText;
+                            }
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+
+                    // Show message if no results
+                    if (!hasResults) {
+                        if (!noResultsMsg) {
+                            noResultsMsg = document.createElement('div');
+                            noResultsMsg.className = 'no-results-message';
+                            noResultsMsg.textContent = 'No areas match your search.';
+                            areaSearch.parentNode.after(noResultsMsg);
+                        } else {
+                            noResultsMsg.style.display = '';
+                        }
+                    }
+                }, 200); // 200ms debounce
+            });
         }
     }
 
@@ -253,42 +380,6 @@ document.addEventListener('header-loaded', function () {
                 // Clear the input
                 emailInput.value = '';
             }
-        });
-    }
-
-    // Delivery Areas Search Functionality
-    const areaSearch = document.getElementById('area-search');
-    if (areaSearch) {
-        areaSearch.addEventListener('input', function () {
-            const searchTerm = this.value.toLowerCase();
-            const areaItems = document.querySelectorAll('.area-item');
-
-            areaItems.forEach(item => {
-                const text = item.textContent.toLowerCase();
-                if (text.includes(searchTerm)) {
-                    item.style.display = 'flex';
-                    // Highlight the matching text
-                    if (searchTerm.length > 0) {
-                        const regex = new RegExp(`(${searchTerm})`, 'gi');
-                        item.innerHTML = item.textContent.replace(regex, '<span class="highlight">$1</span>');
-                    } else {
-                        item.textContent = item.textContent; // Reset highlighting
-                    }
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-
-            // Show/hide regions based on whether they have visible items
-            const regions = document.querySelectorAll('.delivery-region');
-            regions.forEach(region => {
-                const visibleItems = region.querySelectorAll('.area-item[style="display: flex;"]');
-                if (visibleItems.length === 0) {
-                    region.style.display = 'none';
-                } else {
-                    region.style.display = 'block';
-                }
-            });
         });
     }
 

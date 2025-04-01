@@ -22,7 +22,18 @@
 
     <main>
         <!-- Contact Hero -->
-        <section class="page-hero">
+        <section class="page-hero"
+            style="background-image: url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'); background-attachment: fixed;">
+            <div class="hero-overlay"></div>
+            <div class="bubbles">
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+                <div class="bubble"></div>
+            </div>
             <div class="container">
                 <h1 class="page-title animate__animated animate__fadeInDown">Contact Us</h1>
                 <p class="page-subtitle animate__animated animate__fadeInUp animate__delay-1s">We'd love to hear from
@@ -179,79 +190,84 @@
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">Frequently Asked Questions</h2>
-                    <p class="section-subtitle">Quick answers to common questions</p>
+                    <p class="section-subtitle">Quick answers to common questions about our services</p>
                 </div>
                 <div class="faq-container">
                     <div class="faq-item" id="delivery-areas-faq">
                         <div class="faq-question">
-                            <h3>What are your delivery areas?</h3>
+                            <div class="question-content">
+                                <div class="faq-icon"><i class="fas fa-truck"></i></div>
+                                <h3>What are your delivery areas?</h3>
+                            </div>
                             <span class="faq-toggle"><i class="fas fa-plus"></i></span>
                         </div>
                         <div class="faq-answer">
-                            <p>We currently deliver to all major cities in Malaysia including Kuala Lumpur, Penang,
-                                Johor Bahru, and Ipoh. See below for our complete delivery coverage:</p>
+                            <div class="faq-answer-content">
+                                <p>We currently deliver to all major cities in Malaysia including Kuala Lumpur, Penang,
+                                    Johor Bahru, and Ipoh. See below for our complete delivery coverage:</p>
 
-                            <div class="delivery-areas">
-                                <div class="delivery-search">
-                                    <input type="text" id="area-search" placeholder="Search for your location..."
-                                        class="area-search-input">
-                                    <button class="area-search-btn"><i class="fas fa-search"></i></button>
-                                </div>
-                                <div class="delivery-region">
-                                    <h4 class="region-title klang">Klang Valley</h4>
-                                    <div class="area-list">
-                                        <div class="area-item">Kuala Lumpur</div>
-                                        <div class="area-item">Petaling Jaya</div>
-                                        <div class="area-item">Subang Jaya</div>
-                                        <div class="area-item">Shah Alam</div>
-                                        <div class="area-item">Klang</div>
-                                        <div class="area-item">Ampang</div>
-                                        <div class="area-item">Cheras</div>
-                                        <div class="area-item">Puchong</div>
-                                        <div class="area-item">Cyberjaya</div>
+                                <div class="delivery-areas">
+                                    <div class="delivery-search">
+                                        <input type="text" id="area-search" placeholder="Search for your location..."
+                                            class="area-search-input">
+                                        <button class="area-search-btn"><i class="fas fa-search"></i></button>
                                     </div>
-                                </div>
-
-                                <div class="delivery-region">
-                                    <h4 class="region-title northern">Northern Region</h4>
-                                    <div class="area-list">
-                                        <div class="area-item">Penang Island</div>
-                                        <div class="area-item">Butterworth</div>
-                                        <div class="area-item">Ipoh</div>
-                                        <div class="area-item">Taiping</div>
-                                        <div class="area-item">Alor Setar</div>
-                                        <div class="area-item">Sungai Petani</div>
+                                    <div class="delivery-region">
+                                        <h4 class="region-title klang">Klang Valley</h4>
+                                        <div class="area-list">
+                                            <div class="area-item">Kuala Lumpur</div>
+                                            <div class="area-item">Petaling Jaya</div>
+                                            <div class="area-item">Subang Jaya</div>
+                                            <div class="area-item">Shah Alam</div>
+                                            <div class="area-item">Klang</div>
+                                            <div class="area-item">Ampang</div>
+                                            <div class="area-item">Cheras</div>
+                                            <div class="area-item">Puchong</div>
+                                            <div class="area-item">Cyberjaya</div>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="delivery-region">
-                                    <h4 class="region-title southern">Southern Region</h4>
-                                    <div class="area-list">
-                                        <div class="area-item">Johor Bahru</div>
-                                        <div class="area-item">Melaka City</div>
-                                        <div class="area-item">Seremban</div>
-                                        <div class="area-item">Batu Pahat</div>
-                                        <div class="area-item">Muar</div>
+                                    <div class="delivery-region">
+                                        <h4 class="region-title northern">Northern Region</h4>
+                                        <div class="area-list">
+                                            <div class="area-item">Penang Island</div>
+                                            <div class="area-item">Butterworth</div>
+                                            <div class="area-item">Ipoh</div>
+                                            <div class="area-item">Taiping</div>
+                                            <div class="area-item">Alor Setar</div>
+                                            <div class="area-item">Sungai Petani</div>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="delivery-region">
-                                    <h4 class="region-title east-coast">East Coast</h4>
-                                    <div class="area-list">
-                                        <div class="area-item">Kuantan</div>
-                                        <div class="area-item">Kuala Terengganu</div>
-                                        <div class="area-item">Kota Bharu</div>
+                                    <div class="delivery-region">
+                                        <h4 class="region-title southern">Southern Region</h4>
+                                        <div class="area-list">
+                                            <div class="area-item">Johor Bahru</div>
+                                            <div class="area-item">Melaka City</div>
+                                            <div class="area-item">Seremban</div>
+                                            <div class="area-item">Batu Pahat</div>
+                                            <div class="area-item">Muar</div>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="delivery-region">
-                                    <h4 class="region-title east-malaysia">East Malaysia</h4>
-                                    <div class="area-list">
-                                        <div class="area-item">Kuching</div>
-                                        <div class="area-item">Kota Kinabalu</div>
-                                        <div class="area-item">Miri</div>
-                                        <div class="area-item">Sibu</div>
-                                        <div class="area-item">Sandakan</div>
+                                    <div class="delivery-region">
+                                        <h4 class="region-title east-coast">East Coast</h4>
+                                        <div class="area-list">
+                                            <div class="area-item">Kuantan</div>
+                                            <div class="area-item">Kuala Terengganu</div>
+                                            <div class="area-item">Kota Bharu</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="delivery-region">
+                                        <h4 class="region-title east-malaysia">East Malaysia</h4>
+                                        <div class="area-list">
+                                            <div class="area-item">Kuching</div>
+                                            <div class="area-item">Kota Kinabalu</div>
+                                            <div class="area-item">Miri</div>
+                                            <div class="area-item">Sibu</div>
+                                            <div class="area-item">Sandakan</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -260,42 +276,102 @@
 
                     <div class="faq-item">
                         <div class="faq-question">
-                            <h3>How do you ensure the freshness of your seafood?</h3>
+                            <div class="question-content">
+                                <div class="faq-icon"><i class="fas fa-fish"></i></div>
+                                <h3>How do you ensure the freshness of your seafood?</h3>
+                            </div>
                             <span class="faq-toggle"><i class="fas fa-plus"></i></span>
                         </div>
                         <div class="faq-answer">
-                            <p>All our seafood is sourced daily from local fishing communities. We use specialized
-                                cooling technology during transportation and deliver within hours of catch to ensure
-                                maximum freshness.</p>
+                            <div class="faq-answer-content">
+                                <p>All our seafood is sourced daily from local fishing communities. We use specialized
+                                    cooling technology during transportation and deliver within hours of catch to ensure
+                                    maximum freshness. Our quality control team inspects each product before it leaves
+                                    our
+                                    facility.</p>
+                            </div>
                         </div>
                     </div>
 
                     <div class="faq-item">
                         <div class="faq-question">
-                            <h3>What payment methods do you accept?</h3>
+                            <div class="question-content">
+                                <div class="faq-icon"><i class="fas fa-credit-card"></i></div>
+                                <h3>What payment methods do you accept?</h3>
+                            </div>
                             <span class="faq-toggle"><i class="fas fa-plus"></i></span>
                         </div>
                         <div class="faq-answer">
-                            <p>We accept all major credit cards, online banking transfers, e-wallets (Touch 'n Go,
-                                GrabPay, Boost), and cash on delivery for orders under RM300.</p>
+                            <div class="faq-answer-content">
+                                <p>We accept all major credit cards, online banking transfers, e-wallets (Touch 'n Go,
+                                    GrabPay, Boost), and cash on delivery for orders under RM300.</p>
+                                <div class="payment-methods-grid">
+                                    <div class="payment-method"><i class="fab fa-cc-visa"></i> Visa</div>
+                                    <div class="payment-method"><i class="fab fa-cc-mastercard"></i> Mastercard</div>
+                                    <div class="payment-method"><i class="fas fa-university"></i> Online Banking</div>
+                                    <div class="payment-method"><i class="fas fa-wallet"></i> E-Wallets</div>
+                                    <div class="payment-method"><i class="fas fa-money-bill-wave"></i> Cash on Delivery
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
                     <div class="faq-item">
                         <div class="faq-question">
-                            <h3>Do you offer bulk or wholesale orders?</h3>
+                            <div class="question-content">
+                                <div class="faq-icon"><i class="fas fa-boxes"></i></div>
+                                <h3>Do you offer bulk or wholesale orders?</h3>
+                            </div>
                             <span class="faq-toggle"><i class="fas fa-plus"></i></span>
                         </div>
                         <div class="faq-answer">
-                            <p>Yes, we offer special pricing for bulk and wholesale orders. Please contact our wholesale
-                                department at wholesale@oceanfresh.my or call +60 3 1234 5679 for more information.</p>
+                            <div class="faq-answer-content">
+                                <p>Yes, we offer special pricing for bulk and wholesale orders. Please contact our
+                                    wholesale
+                                    department at wholesale@oceanfresh.my or call +60 3 1234 5679 for more information.
+                                </p>
+                                <div class="wholesale-benefits">
+                                    <div class="benefit-item">
+                                        <i class="fas fa-percentage"></i>
+                                        <span>Volume discounts</span>
+                                    </div>
+                                    <div class="benefit-item">
+                                        <i class="fas fa-truck-loading"></i>
+                                        <span>Scheduled deliveries</span>
+                                    </div>
+                                    <div class="benefit-item">
+                                        <i class="fas fa-user-tie"></i>
+                                        <span>Dedicated account manager</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <div class="question-content">
+                                <div class="faq-icon"><i class="fas fa-exchange-alt"></i></div>
+                                <h3>What is your return and refund policy?</h3>
+                            </div>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>We stand behind the quality of our products. If you're not satisfied with your
+                                    purchase,
+                                    please contact us within 24 hours of delivery. We'll arrange for a replacement or
+                                    refund
+                                    depending on the situation.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="faq-more">
-                    <p>Have more questions? Check our <a href="faq.html">complete FAQ page</a> or contact us directly.
-                    </p>
-                </div>
+                <!-- <div class="faq-more">
+                    <p>Have more questions? <a href="faq.html" class="btn btn-outline btn-sm">View All FAQs</a> or <a
+                            href="#" class="contact-link">contact us directly</a>.</p>
+                </div> -->
             </div>
         </section>
 
@@ -315,8 +391,9 @@
         </section>
     </main>
 
-    <!-- Footer -->
-    <div id="footer-container"></div>
+
+    <!-- Include Footer -->
+    <div id="footer-placeholder"></div>
     <script src="js/loader.js"></script>
     <script src="js/main.js"></script>
     <script src="js/animation.js"></script>

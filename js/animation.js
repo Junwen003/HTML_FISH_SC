@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
         threshold: 0.25,  // Trigger when 25% of the element is visible
         rootMargin: '0px 0px -100px 0px'  // Only trigger when element is well into the viewport
     },
-        initializeTestimonialSlider(),
+        // initializeTestimonialSlider(),
 
     );
     function initializeTestimonialSlider() {
@@ -274,10 +274,10 @@ document.addEventListener('DOMContentLoaded', function () {
     //     rootMargin: '0px 0px -150px 0px'
     // });
 
-    const qualitySection = document.querySelector('.about-quality');
-    if (qualitySection) {
-        qualityProcessObserver.observe(qualitySection);
-    }
+    // const qualitySection = document.querySelector('.about-quality');
+    // if (qualitySection) {
+    //     qualityProcessObserver.observe(qualitySection);
+    // }
 
     // Parallax effect for hero section
     window.addEventListener('scroll', function () {
